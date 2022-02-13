@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+<!-- {% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+{% endblock %} -->
+
+{% block main %}
+
+<div class="card">
+    <div class="top">
+        <img src="{{ url_for('static', filename='./avatar.jpg') }}" alt="User's Profile Photo">
+        <!-- <img src="../static/images/MaryJane.png" alt="User's Profile Photo"> -->
+        <h1 id="name">{{ name }}</h1>
+        <p>@<span id="username">{{ username }}</span>
+        <br>{{ parish }}, {{ country }}
+        <br>Joined <span id="date">{{ date_joined }}</span></p>
+    </div>
+
+    <div class="base">
+        <p id="bio">{{ bio }}</p>
+        
+        <div class="details">
+            <div class="columns">
+                <span id="posts">{{ num_posts }}</span>
+                <p>Posts</p>
+            </div>
+            <div class="columns">
+                <span id="following">{{ num_follows }}</span>
+                <p>Following</p>
+            </div>
+            <div class="columns">
+                <span id="followers">{{ num_followers }}</span>
+                <p>Followers</p>
+            </div>
+        </div>
+
+        <button>Follow</button>
+    </div>
+</div>
+
+{% endblock %}
